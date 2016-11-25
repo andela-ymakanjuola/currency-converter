@@ -15,12 +15,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/++/+.js'
+      'vendor/angular/angular.js',
+      'vendor/angular-resource/angular-resource.js',
+      'vendor/angular-mocks/angular-mocks.js',
+      'app/**/*.js',
+      'tests/**/*.js',
     ],
 
 
     // list of files to exclude
     exclude: [
+      'app/app.js'
     ],
 
 
