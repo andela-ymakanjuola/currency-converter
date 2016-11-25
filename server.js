@@ -8,6 +8,8 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + '/'))
+
 var port = process.env.PORT || 3333;
 app.listen(port, function() {
   console.log('listening on port ' + port)
