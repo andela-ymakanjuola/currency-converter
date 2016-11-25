@@ -4,15 +4,13 @@
     <title>Currency Converter</title>
   </head>
   <body>
-    <h1> Hello world</h1>
-
     <div ng-controller="currencyConverterCtrl">
       <form name="converterForm">
         <select name="currency" ng-model="currency">
           <option ng-repeat="currency in currencies" value="{{currency}}"> {{currency}} </option>
         </select>
         <input type="number" ng-model="currencyAmount" />
-        <div>{{ usdCurency }}</div>
+        <input value="{{ usdCurency.toFixed(2) }}" />
         <button ng-click="convertCurrencyToUsd(currency)">convert</button>
       </form>
     </div>
