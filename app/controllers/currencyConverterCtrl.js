@@ -14,7 +14,6 @@ angular.module('app').controller('currencyConverterCtrl', function($scope, curre
 
   $scope.convertCurrencyToUsd = function(currency) {
      currencyConverterService.getUSDRates().then(function(data) {
-      console.log(currency)
       rates = data.data['rates'];
       $scope.usdCurency = $scope.currencyAmount/rates[currency];
     }).catch(function(error) {
