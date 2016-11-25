@@ -7,9 +7,9 @@
     <h1> Hello world</h1>
 
     <body>
-      <div>
+      <div ng-controller="currencyConverterCtrl">
         <select>
-          <option></option>
+          <option ng-repeat="currency in currencies" value="{{ currency }}"> {{currency}} </option>
         </select>
         <input type="number" name="">
       </div>
