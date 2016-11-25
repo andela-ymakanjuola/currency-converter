@@ -3,7 +3,7 @@ angular.module('app').controller('currencyConverterCtrl', function($scope, curre
   $scope.currencyAmount = 0;
   $scope.usdCurency = 0
   var rates = {};
-  
+
   currencyConverterService.getUSDRates().then(function(data){
     $scope.currencies = Object.keys(data.data['rates']);
   }).catch(function(error) {
@@ -16,7 +16,7 @@ angular.module('app').controller('currencyConverterCtrl', function($scope, curre
      currencyConverterService.getUSDRates().then(function(data) {
       console.log(currency)
       rates = data.data['rates'];
-      $scope.usdCurency = $scope.currencyAmount/$scope.rates[currency];
+      $scope.usdCurency = $scope.currencyAmount/rates[currency];
     }).catch(function(error) {
       if(error) {
         console.log("error getting rates", error)
